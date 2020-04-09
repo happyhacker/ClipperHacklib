@@ -1,0 +1,116 @@
+FUNCTION AddMonth(dDate, nAddMonths)
+FUNCTION AmPm(cTime,lUpper)
+FUNCTION Amt2Chr(nNum, nLen1, lNumFolw, lPercent)
+FUNCTION Apick(nTop, nLeft, nBottom, nRight, aArray, cBoxTitle, cBoxClr,;
+         cTitleClr, cBarClr, actual_len, lTagging, nInitRow)
+FUNCTION BOM(dDate)
+FUNCTION BrowseExec(oBrowse, aMethods)
+PROCEDUR Center(cMessage, nRow, nLCol, nRCol)
+FUNCTION Dialog(nTRow, nLCol, nBRow, nRCol, cTitle, cFrame, lShadow,;
+         cBoxClr,cTitleClr)
+FUNCTION DOSERROR(nError)
+PROCEDUR EnvStatus(cProd,nLine,cVar)
+FUNCTION EOM(dDate)
+FUNCTION ErrDraw(cMsg1, cMsg2)
+FUNCTION Filter(cDBF, aFilter)
+FUNCTION InitBrowse(nTop, nLeft, nBottom, nRight, cTitle, aFields, aArray)
+FUNCTION GetAlias(cFile)
+FUNCTION GetColor()
+FUNCTION GraphIndex(cDBFName, cNTXName, cIndexKey, cPath,lDisplay)
+FUNCTION HackCal(hackday, line, variable)
+FUNCTION IsLeap(dDate)
+FUNCTION ListRp1(cLibrary,cPrinter)
+FUNCTION MSG(aMsg, cTitle, cBorder, lShadow, cColor, nTRow, cJustify)
+FUNCTION NetUse(cFilename, lExclUse, nWait, cAliasName)
+FUNCTION NewColor(top,left,bottom,right,cColor)
+FUNCTION PlsWait(cMsg,cBorder,lShadow,cColor)
+FUNCTION PrintRR(cReport,cLibrary,cPrinter,cBoxClr,cbCond)
+FUNCTION RecLock(lTryUntil)
+FUNCTION RrExecute(cRRuninDBF, aRRecNos, cUserName, cDrivePath, cConfig)
+FUNCTION RRLib(libname)
+FUNCTION RunIt(cCommand, nMemFree, cPath, cTempPath, lChkErr)
+FUNCTION SmallBox(nRow,nCol,cString,cClr)
+FUNCTION StripAlias(cVar)
+FUNCTION YesNo(cMsg, lDefault, nTop)
+
+
+*ý***************************************************************
+*      Function: InitBrowse()
+*    Parameters: <nTop>, <nLeft>, <nBottom>, <nRight>, <[Title]>,;
+*                <[aFields]>,<[aArray]>
+*       Returns: NIL
+*   Description: Initialize browse
+*    Created by: Larry Hack   07-31-92
+/* Notes: You can browse arrays or databases.  If you browse data
+bases you can pass the column in the second element of
+aFields as either a character or a codeblock. If you
+pass it as a character it will be macro compiled for gets. If
+you don't pass an array at all, it will create a column for every
+field in the selected area.  */
+*****************************************************************
+
+Cargo holds an array, the manifest constants defined in genbrows.ch are:
+M_TITLE    Title
+M_BORDER   Border; S,D, or T for single, double, or Thick
+M_SHADOW   Shadow; .T. or .F.
+M_GETS     Allow gets; M_ON, or M_OFF
+M_DELCOL   Allow deletion of columns; M_ON, or M_OFF
+M_DOSEEK   Display/accept seeks; M_ON, or M_OFF
+M_MOVE     Allow box to be moved
+M_RESIZE   Allow box to be resized
+M_EXIT     Exit browse; .T.,.F.
+M_VISIBLE  Whether or not browse is currently visible, .T.,.F.
+M_SCREEN   Holder for saved screen of browse area only
+M_HIDE     Whether browse screen should be erased on exit
+M_FOOTER   Footer for tbrowse box
+
+GenBrowse Methods
+*ý***************************************************************
+*      Function: ForceStable()
+*    Parameters: Browse object
+*       Returns: NIL
+*   Description: Stablize the browse objec
+*    Created by: Larry Hack   07-31-92
+
+*ý***************************************************************
+*      Function: SeekIt()
+*    Parameters:
+*       Returns: NIL
+*   Description: Do a seek based on current index order
+*    Created by: Larry Hack   08-25-92
+
+*ý***************************************************************
+*      Function: MoveBrowse()
+*    Parameters: Browse object
+*       Returns: NIL
+*   Description: Move browse object with cursor keys, home, & end
+*    Created by: Larry Hack   08-21-92
+
+*ý***************************************************************
+*      Function: MoveBrowse()
+*    Parameters: Browse object
+*       Returns: NIL
+*   Description: Move browse object with cursor keys, home, & end
+*    Created by: Larry Hack   08-21-92
+
+*****************************************************************
+*      Function: DispBrowse()
+*    Parameters: Browse object
+*       Returns: NIL
+*   Description: Display the browse
+*    Created by: Larry Hack   09-17-92
+
+*****************************************************************
+*      Function: DispBrowse()
+*    Parameters: Browse object
+*       Returns: NIL
+*   Description: Display the browse
+*    Created by: Larry Hack   09-17-92
+
+*ý***************************************************************
+*      Function: DelCol()
+*    Parameters: Browse object
+*       Returns: NIL
+*   Description: Delete column from tbrowse
+*    Created by: Larry Hack   08-03-92
+*****************************************************************
